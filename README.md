@@ -35,6 +35,11 @@ Checks include (but are not limited to):
 
 ---
 
+## Use case
+**waptly** is primarily designed as a component to be integrated into red team automation workflows, with the purpose of assisting in mapping the attack surface of a web application.  
+It helps generate actionable insights to be further investigated during penetration testing activities.  
+The output already includes findings that can be directly incorporated into the final report, such as missing HTTP security headers.  
+
 ## Usage
 
 You can directly download the [latest binary release](https://github.com/R3DRUN3/waptly/releases) for your target architecture, 
