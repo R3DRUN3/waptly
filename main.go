@@ -28,7 +28,7 @@ type Report struct {
 }
 
 const (
-	defaultWorkers = 20          // concurrent goroutines
+	defaultWorkers = 20 // concurrent goroutines
 	httpTimeout    = 10 * time.Second
 )
 
@@ -129,7 +129,7 @@ func scanTarget(client *http.Client, target string) TargetReport {
 		report.Error = fmt.Sprintf("invalid URL: %v", err)
 		return report
 	}
-	req.Header.Set("User-Agent", "waptly/1.0 (security posture scanner)")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36")
 
 	resp, err := client.Do(req)
 	if err != nil {
