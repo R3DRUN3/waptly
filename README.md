@@ -67,12 +67,35 @@ https://github.com/user-attachments/assets/034d1811-cfde-4c94-8fa8-e7a9dfda412c
 Waptly outputs a single JSON report to stdout, here is an example:  
 ```json
 {
-  "version": "0.1.0",
-  "generated_at": "2026-04-20T07:27:30Z",
+  "version": "v0.1.1",
+  "generated_at": "2026-04-20T15:22:04Z",
   "targets": [
     {
       "target": "https://pentest-ground.com:4280/",
       "checks": [
+        {
+          "check": "cookie_security",
+          "passed": false,
+          "details": {
+            "findings": [
+              {
+                "name": "security",
+                "missing_secure": true,
+                "missing_http_only": true,
+                "missing_same_site": true,
+                "severity": "high"
+              },
+              {
+                "name": "PHPSESSID",
+                "missing_secure": true,
+                "missing_http_only": true,
+                "missing_same_site": true,
+                "severity": "high"
+              }
+            ],
+            "total_cookies_checked": 2
+          }
+        },
         {
           "check": "exposed_files",
           "passed": false,
