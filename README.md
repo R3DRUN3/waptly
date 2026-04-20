@@ -1,2 +1,4 @@
 # waptly
-automate some web security checks
+
+> Automate some Web security checks.
+
