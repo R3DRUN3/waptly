@@ -42,7 +42,13 @@ however, the **recommended** way to run `waptly` is [via Docker](https://github.
 
 ```console
 docker run ghcr.io/r3drun3/waptly:v0.1.0 <target_1> <target_2> <target_n>
-```  
+```
+
+
+
+https://github.com/user-attachments/assets/034d1811-cfde-4c94-8fa8-e7a9dfda412c
+
+
 
 
 
