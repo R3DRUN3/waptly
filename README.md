@@ -1,6 +1,9 @@
 # waptly  
 
+
+[![Latest Release](https://img.shields.io/github/v/release/r3drun3/waptly?logo=github)](https://github.com/r3drun3/waptly/releases/latest)   
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)  ![Red Team Badge](https://img.shields.io/badge/Team-Red-red)  
+
 
 <img src="./media/logo.png" width="300"/>
 
