@@ -7,8 +7,8 @@
 
 <img src="./media/logo.png" width="300"/>
 
-A fast, extensible CLI tool to automate security posture checks during Web Application Penetration Testing (WAPT) activities.  
-Waptly scans one or more targets concurrently and outputs a structured JSON report, helpin gpentesters map the webapp risk surface.  
+A lightweight, fast and extensible CLI tool to automate security posture checks during Web Application Penetration Testing (WAPT) activities.  
+Waptly scans one or more targets concurrently and outputs a structured JSON report, helpin pentesters map the webapp risk surface.  
 
 ---
 
@@ -35,9 +35,13 @@ Checks include (but are not limited to):
 
 ---
 
-## Installation/usage
+## Usage
 
-TO DO
+You can directly download the [latest binary release](https://github.com/R3DRUN3/waptly/releases) for your target architecture, 
+however, the **recommended** way to run `waptly` is [via Docker](https://github.com/R3DRUN3/waptly/pkgs/container/waptly):  
+
+
+
 
 
 ## Output  
