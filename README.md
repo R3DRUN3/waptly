@@ -39,6 +39,8 @@ Checks include (but are not limited to):
 **waptly** is primarily designed as a component to be integrated into red team automation workflows, with the purpose of assisting in mapping the attack surface of a web application.  
 It helps generate actionable insights to be further investigated during penetration testing activities.  
 The output already includes findings that can be directly incorporated into the final report, such as missing HTTP security headers.  
+**waptly** is not intended to replace established WAPT tools such as Nuclei, Gobuster or Burp Suite.  
+On the contrary, it is designed to complement them.  
 
 ## Usage
 
@@ -46,7 +48,7 @@ You can directly download the [latest binary release](https://github.com/R3DRUN3
 however, the **recommended** way to run `waptly` is [via Docker](https://github.com/R3DRUN3/waptly/pkgs/container/waptly):  
 
 ```console
-docker run ghcr.io/r3drun3/waptly:v0.1.0 <target_1> <target_2> <target_n>
+docker run ghcr.io/r3drun3/waptly:v0.1.1 <target_1> <target_2> <target_n>
 ```
 
 
