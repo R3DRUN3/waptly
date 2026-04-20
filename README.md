@@ -1,6 +1,8 @@
 # waptly  
 
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)  ![Red Team Badge](https://img.shields.io/badge/Team-Red-red)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)  ![Red Team Badge](https://img.shields.io/badge/Team-Red-red)  
+
+<img src="./media/logo.png" width="300"/>
 
 A fast, extensible CLI tool to automate security posture checks during Web Application Penetration Testing (WAPT) activities.  
 Waptly scans one or more targets concurrently and outputs a structured JSON report, helpin gpentesters map the webapp risk surface.  
