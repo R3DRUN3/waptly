@@ -39,6 +39,7 @@ TO DO
 Waptly outputs a single JSON report to stdout, here is an example:  
 ```json
 {
+  "version": "0.1.0",
   "generated_at": "2026-04-20T07:27:30Z",
   "targets": [
     {

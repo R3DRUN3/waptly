@@ -14,6 +14,8 @@ import (
 	_ "waptly/checks"
 )
 
+var version = "dev"
+
 // TargetReport holds all check results for a single target URL.
 type TargetReport struct {
 	Target string          `json:"target"`
@@ -23,6 +25,7 @@ type TargetReport struct {
 
 // Report is the top-level JSON output.
 type Report struct {
+	Version     string         `json:"version"`
 	GeneratedAt string         `json:"generated_at"`
 	Targets     []TargetReport `json:"targets"`
 }
@@ -54,6 +57,7 @@ func main() {
 	results := runScans(client, targets, defaultWorkers)
 
 	report := Report{
+		Version:     version,
 		GeneratedAt: time.Now().UTC().Format(time.RFC3339),
 		Targets:     results,
 	}

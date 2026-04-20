@@ -42,6 +42,9 @@ jobs:
         with:
           go-version: ${{ env.GO_VERSION }}
 
+      - name: Install UPX
+        run: sudo apt-get install -y upx-ucl
+
       - name: Build binary
         env:
           GOOS: ${{ matrix.goos }}
@@ -51,6 +54,10 @@ jobs:
           OUTPUT="waptly-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.ext }}"
           go build -ldflags="-s -w -X main.version=${{ github.ref_name }}" \
             -o "${OUTPUT}" .
+          # Skip UPX for macOS binaries — codesigning conflicts
+          if [[ "${{ matrix.goos }}" != "darwin" ]]; then
+            upx --best --lzma "${OUTPUT}"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -129,5 +136,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: VERSION=${{ github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
