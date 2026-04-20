@@ -40,6 +40,12 @@ Checks include (but are not limited to):
 You can directly download the [latest binary release](https://github.com/R3DRUN3/waptly/releases) for your target architecture, 
 however, the **recommended** way to run `waptly` is [via Docker](https://github.com/R3DRUN3/waptly/pkgs/container/waptly):  
 
+```console
+docker run ghcr.io/r3drun3/waptly:v0.1.0 <target_1> <target_2> <target_n>
+```  
+
+
+
 
 
 
