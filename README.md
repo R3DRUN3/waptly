@@ -41,6 +41,12 @@ It helps generate actionable insights to be further investigated during penetrat
 The output already includes findings that can be directly incorporated into the final report, such as missing HTTP security headers.  
 **waptly** is not intended to replace established WAPT tools such as Nuclei, Gobuster or Burp Suite.  
 On the contrary, it is designed to complement them.  
+**waptly** is also highly effective as a tool for AI agents operating via CLI environments, such as Claude Code or Codex.  
+It is possible either to create a customized skill file for the agent or to have the agent invoke the tool directly,  
+for example, when using Codex:   
+```console
+codex --full-auto "run the command `./waptly https://pentest-ground.com:4280/` and write a summary of the output to FINDINGS.md"
+```
 
 ## Usage
 
