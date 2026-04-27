@@ -96,7 +96,6 @@ func probeOptions(client *http.Client, target string) []string {
 	if err != nil {
 		return nil
 	}
-	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36")
 
 	resp, err := client.Do(req)
 	if err != nil {
@@ -128,7 +127,6 @@ func probeMethod(client *http.Client, target, method string) (int, error) {
 	if err != nil {
 		return 0, fmt.Errorf("could not build request: %w", err)
 	}
-	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36")
 
 	// For TRACE we also send a custom header to verify server reflection.
 	if method == "TRACE" {

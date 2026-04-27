@@ -166,7 +166,6 @@ func probe(client *http.Client, base, path string) (ExposedFile, bool) {
 	if err != nil {
 		return ExposedFile{}, false
 	}
-	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36")
 
 	resp, err := client.Do(req)
 	if err != nil {
