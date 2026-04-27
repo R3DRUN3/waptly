@@ -8,7 +8,7 @@
 <img src="./media/logo.png" width="300"/>
 
 A lightweight, fast and extensible CLI tool to automate security posture checks during Web Application Penetration Testing (WAPT) activities.  
-Waptly scans one or more targets concurrently and outputs a structured JSON report, helpin pentesters map the webapp risk surface.  
+Waptly scans one or more targets concurrently and outputs a structured JSON report, helping pentesters map the webapp risk surface.  
 
 ---
 
