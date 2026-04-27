@@ -54,7 +54,7 @@ You can directly download the [latest binary release](https://github.com/R3DRUN3
 however, the **recommended** way to run `waptly` is [via Docker](https://github.com/R3DRUN3/waptly/pkgs/container/waptly):  
 
 ```console
-docker run ghcr.io/r3drun3/waptly:v0.1.1 <target_1> <target_2> <target_n>
+docker run ghcr.io/r3drun3/waptly:v0.1.2 <target_1> <target_2> <target_n>
 ```
 
 
@@ -73,7 +73,7 @@ https://github.com/user-attachments/assets/034d1811-cfde-4c94-8fa8-e7a9dfda412c
 Waptly outputs a single JSON report to stdout, here is an example:  
 ```json
 {
-  "version": "v0.1.1",
+  "version": "v0.1.2",
   "generated_at": "2026-04-20T15:22:04Z",
   "targets": [
     {
