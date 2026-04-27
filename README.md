@@ -54,7 +54,7 @@ You can directly download the [latest binary release](https://github.com/R3DRUN3
 however, the **recommended** way to run `waptly` is [via Docker](https://github.com/R3DRUN3/waptly/pkgs/container/waptly):  
 
 ```console
-docker run ghcr.io/r3drun3/waptly:v0.1.2 <target_1> <target_2> <target_n>
+docker run ghcr.io/r3drun3/waptly:v0.1.3 <target_1> <target_2> <target_n>
 ```
 
 
@@ -73,8 +73,8 @@ https://github.com/user-attachments/assets/034d1811-cfde-4c94-8fa8-e7a9dfda412c
 Waptly outputs a single JSON report to stdout, here is an example:  
 ```json
 {
-  "version": "v0.1.2",
-  "generated_at": "2026-04-20T15:22:04Z",
+  "version": "v0.1.3",
+  "generated_at": "2026-04-27T15:54:15Z",
   "targets": [
     {
       "target": "https://pentest-ground.com:4280/",
@@ -100,6 +100,39 @@ Waptly outputs a single JSON report to stdout, here is an example:
               }
             ],
             "total_cookies_checked": 2
+          }
+        },
+        {
+          "check": "error_handling",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "payload_type": "large_payload",
+                "path": "/",
+                "triggered_500": false
+              },
+              {
+                "payload_type": "malformed_json",
+                "path": "/",
+                "triggered_500": false
+              },
+              {
+                "payload_type": "unicode_fuzz",
+                "path": "/",
+                "triggered_500": false
+              },
+              {
+                "payload_type": "sql_injection",
+                "path": "/?id=' OR 1=1--",
+                "triggered_500": false
+              },
+              {
+                "payload_type": "cmd_injection",
+                "path": "/?q=;cat /etc/passwd",
+                "triggered_500": false
+              }
+            ]
           }
         },
         {
@@ -189,6 +222,22 @@ Waptly outputs a single JSON report to stdout, here is an example:
           }
         },
         {
+          "check": "https_redirect",
+          "passed": false,
+          "details": {
+            "http_status": 400,
+            "location": "",
+            "message": "No valid HTTP to HTTPS redirect."
+          }
+        },
+        {
+          "check": "open_redirect",
+          "passed": true,
+          "details": {
+            "findings": []
+          }
+        },
+        {
           "check": "robots_txt",
           "passed": true,
           "details": {
@@ -249,7 +298,7 @@ Waptly outputs a single JSON report to stdout, here is an example:
           "details": {
             "certificates": [
               {
-                "days_until_expiry": 63,
+                "days_until_expiry": 56,
                 "dns_names": [
                   "pentest-ground.com"
                 ],
