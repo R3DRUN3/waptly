@@ -236,7 +236,7 @@ func assignSeverity(path string) string {
 	high := []string{
 		".git/", "config.php", "config.yml", "settings.py",
 		"application.properties", "docker-compose", "actuator",
-		"swagger", "graphql", "phpinfo", "server-status",
+		"swagger", "swagger-ui.html", "graphql", "phpinfo", "server-status",
 		".htaccess", "web.config", "access.log", "error.log",
 		"package.json", "requirements.txt", "Gemfile",
 	}
