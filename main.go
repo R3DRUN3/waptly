@@ -36,13 +36,31 @@ const (
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Fprintln(os.Stderr, "Usage: waptly <url1> [url2] ...")
+	args := os.Args[1:]
+
+	if len(args) < 1 {
+		fmt.Fprintln(os.Stderr, "Usage: waptly [--verbose] <url1> [url2] ...")
 		fmt.Fprintln(os.Stderr, "Example: waptly https://example.com https://another.com")
 		os.Exit(1)
 	}
 
-	targets := parseTargets(os.Args[1:])
+	verbose := false
+	var targetArgs []string
+	for _, arg := range args {
+		if arg == "--verbose" || arg == "-verbose" || arg == "-v" {
+			verbose = true
+		} else {
+			targetArgs = append(targetArgs, arg)
+		}
+	}
+
+	if len(targetArgs) < 1 {
+		fmt.Fprintln(os.Stderr, "Usage: waptly [--verbose] <url1> [url2] ...")
+		fmt.Fprintln(os.Stderr, "Example: waptly https://example.com https://another.com")
+		os.Exit(1)
+	}
+
+	targets := parseTargets(targetArgs)
 
 	client := &http.Client{
 		Timeout: httpTimeout,
@@ -55,6 +73,18 @@ func main() {
 	}
 
 	results := runScans(client, targets, defaultWorkers)
+
+	if !verbose {
+		for i := range results {
+			filtered := results[i].Checks[:0]
+			for _, c := range results[i].Checks {
+				if !c.Passed {
+					filtered = append(filtered, c)
+				}
+			}
+			results[i].Checks = filtered
+		}
+	}
 
 	report := Report{
 		Version:     version,

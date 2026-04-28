@@ -59,9 +59,13 @@ docker run ghcr.io/r3drun3/waptly:v0.1.3 <target_1> <target_2> <target_n>
 
 
 
-https://github.com/user-attachments/assets/034d1811-cfde-4c94-8fa8-e7a9dfda412c
+https://github.com/user-attachments/assets/034d1811-cfde-4c94-8fa8-e7a9dfda412c  
 
 
+> [!TIP]
+> By default, the JSON output only includes failed checks, keeping the report focused and noise-free.  
+> Pass the `--verbose` (or `-v`) flag to include all checks regardless of their result.  
+> Example: waptly --verbose https://example.com  
 
 
 
